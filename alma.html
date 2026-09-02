@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pentru Alma 💖</title>
+    <style>
+        body {
+            background-color: #ffe6ea; /* Roz foarte drăguț */
+            font-family: 'Comic Sans MS', 'Segoe UI', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            color: #d10068;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 30px;
+            padding: 40px;
+            max-width: 600px;
+            box-shadow: 0 10px 25px rgba(255, 105, 180, 0.2);
+            border: 5px dashed #ff99cc;
+            position: relative;
+            z-index: 10;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background-color: #ff66b2;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin: 10px;
+            font-family: 'Comic Sans MS', 'Segoe UI', sans-serif;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 10px rgba(255, 102, 178, 0.4);
+        }
+
+        .btn:hover {
+            background-color: #ff3399;
+            transform: scale(1.1) rotate(-2deg);
+        }
+
+        /* Acesta este butonul care nu poate fi apăsat */
+        .fake-btn {
+            background-color: #f0f0f0;
+            color: #a0a0a0;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            margin: 10px;
+            display: inline-block;
+            cursor: not-allowed;
+            text-decoration: line-through;
+            border: 2px solid #e0e0e0;
+        }
+
+        .images-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .images-container img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #ff99cc;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .images-container img:hover {
+            transform: scale(1.15) rotate(5deg);
+        }
+
+        #step2 {
+            display: none; /* Ascuns la început */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div id="step1">
+            <h1>buna, almaa cum esti? ✨💖</h1>
+            <button class="btn" onclick="arataPasulDoi('bine')">bineee</button>
+            <button class="btn" onclick="arataPasulDoi('rau')">ma enerveaza mama si bunica</button>
+        </div>
+
+        <div id="step2">
+            <h1 id="mesajPersonalizat"></h1>
+            <a href="https://instagram.com/stefan.m.b" target="_blank" class="btn">daa haaai 💕</a>
+            <div class="fake-btn">nu ca nu mi place de tine</div>
+        </div>
+
+        <div class="images-container">
+                   </div>
+    </div>
+
+    <script>
+        function arataPasulDoi(raspuns) {
+            // Ascundem pasul 1 și afișăm pasul 2
+            document.getElementById('step1').style.display = 'none';
+            document.getElementById('step2').style.display = 'block';
+
+            // Schimbăm textul în funcție de ce a apăsat
+            let textAfisat = "";
+            if (raspuns === 'bine') {
+                textAfisat = "omg daca tot te plictisesti hai sa vorbim pe insta 💅";
+            } else if (raspuns === 'rau') {
+                textAfisat = "o nuu, hai sa vorbim pe insta sa te simti mai ok 🥺";
+            }
+
+            // Punem textul în HTML
+            document.getElementById('mesajPersonalizat').innerText = textAfisat;
+        }
+    </script>
+
+</body>
+</html>
